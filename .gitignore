@@ -105,3 +105,9 @@ skin/frontend/default/modern/
 skin/frontend/enterprise
 skin/install/
 var/
+/media/dhl/logo.jpg
+/app/etc/modules/Mage_CurrencySymbol.xml
+/app/etc/modules/Mage_Oauth.xml
+/app/etc/modules/Mage_Captcha.xml
+/app/etc/modules/Mage_Api2.xml
+/api.php
