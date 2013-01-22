@@ -111,3 +111,4 @@ var/
 /app/etc/modules/Mage_Captcha.xml
 /app/etc/modules/Mage_Api2.xml
 /api.php
+/app/etc/local.xml
