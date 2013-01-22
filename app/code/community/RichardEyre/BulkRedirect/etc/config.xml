@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Richard Eyre Bulk Redirect
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ *
+ * @category    RichardEyre
+ * @package     RichardEyre_BulkRedirect
+ * @copyright   Copyright (c) 2013 Richard Eyre (http://richardeyre.me.uk)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <RichardEyre_BulkRedirect>
+            <version>0.1.0</version>
+        </RichardEyre_BulkRedirect>
+    </modules>
+    <admin>
+        <routers>
+            <bulkredirect>
+                <use>admin</use>
+                <args>
+                    <module>RichardEyre_BulkRedirect</module>
+                    <frontName>bulkredirect</frontName>
+                </args>
+            </bulkredirect>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <catalog>
+                <children>
+                    <urlrewrite>
+                        <children>
+                            <bulkredirectimport translate="title">
+                                <title>Import</title>
+                                <action>bulkredirect/adminhtml_bulkredirect/import</action>
+                                <sort_order>10</sort_order>
+                            </bulkredirectimport>
+                            <bulkredirectexport translate="title">
+                                <title>Export</title>
+                                <action>bulkredirect/adminhtml_bulkredirect/export</action>
+                                <sort_order>20</sort_order>
+                            </bulkredirectexport>
+                        </children>
+                    </urlrewrite>
+                </children>
+            </catalog>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <catalog>
+                            <children>
+                                <urlrewrite translate="title">
+                                    <children>
+                                        <bulkredirectimport translate="title">
+                                            <title>Import</title>
+                                        </bulkredirectimport>
+                                        <bulkredirectexport translate="title">
+                                            <title>Export</title>
+                                        </bulkredirectexport>
+                                    </children>
+                                </urlrewrite>
+                            </children>
+                        </catalog>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <global>
+        <helpers>
+            <affiliate>
+                <class>RichardEyre_BulkRedirect_Helper</class>
+            </affiliate>
+        </helpers>
+    </global>
+</config>
