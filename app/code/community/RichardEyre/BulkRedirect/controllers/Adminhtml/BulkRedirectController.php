@@ -36,6 +36,7 @@ class RichardEyre_BulkRedirect_Adminhtml_BulkRedirectController extends Mage_Adm
     {
 
         $this->_initAction();
+        $this->getLayout()->getBlock('head')->setTitle($this->__('Import / Rewrite Rules / Magento Admin'));
         $this->renderLayout();
 
     }
@@ -43,10 +44,14 @@ class RichardEyre_BulkRedirect_Adminhtml_BulkRedirectController extends Mage_Adm
     /**
      * Export URL rewrites to a CSV file
      */
-    public function exportAction()
+    public function exportCsvAction()
     {
-        $this->_initAction();
-        $this->renderLayout();
+
+        $fileName = 'bulk_redirect_export.csv';
+        $content = $this->getLayout()
+            ->createBlock('adminhtml/urlrewrite_grid')
+            ->getCsvFile();
+        $this->_prepareDownloadResponse($fileName, $content);
 
     }
 

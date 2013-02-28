@@ -33,6 +33,7 @@
             </bulkredirect>
         </routers>
     </admin>
+    <!--
     <adminhtml>
         <menu>
             <catalog>
@@ -77,11 +78,22 @@
             </resources>
         </acl>
     </adminhtml>
+    -->
     <global>
         <helpers>
             <affiliate>
                 <class>RichardEyre_BulkRedirect_Helper</class>
             </affiliate>
         </helpers>
+        <blocks>
+            <RichardEyre_BulkRedirect>
+                <class>RichardEyre_BulkRedirect_Block_Adminhtml_Urlrewrite_Grid</class>
+            </RichardEyre_BulkRedirect>
+            <adminhtml>
+                <rewrite>
+                    <urlrewrite_grid>RichardEyre_BulkRedirect_Block_Adminhtml_Urlrewrite_Grid</urlrewrite_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
     </global>
 </config>
