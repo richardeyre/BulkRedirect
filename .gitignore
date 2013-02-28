@@ -112,3 +112,4 @@ var/
 /app/etc/modules/Mage_Api2.xml
 /api.php
 /app/etc/local.xml
+!/LICENSE_AFL.txt
